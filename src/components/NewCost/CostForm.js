@@ -6,16 +6,40 @@ const CostForm = () => {
     const [amount, setAmount] = useState('');
     const [date, setDate] = useState('');
 
+    // const [userInput, setUserInput] = useState({
+    //     name: '',
+    //     amount: '',
+    //     date: '',
+    // });
+
     const nameChangeHandler = (event) => {
         setName(event.target.value);
+        // setUserInput({
+        //     ...userInput,
+        //     name: event.target.value
+        // });
+        // setUserInput((previousState) => {
+        //     return {
+        //         ...previousState,
+        //         name: event.target.value
+        //     }
+        // });
     }
 
     const amountChangeHandler = (event) => {
         setAmount(event.target.value);
+        // setUserInput({
+        //     ...userInput,
+        //     amount: event.target.value
+        // });
     }
 
     const dateChangeHandler = (event) => {
         setDate(event.target.value);
+        // setUserInput({
+        //     ...userInput,
+        //     date: event.target.value
+        // });
     }
 
     return <form>
