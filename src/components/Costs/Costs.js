@@ -15,21 +15,13 @@ function Costs(props) {
         <div>
             <Card className='costs'>
                 <CostsFilter onChangeYear={yearChangeHandler} year={selectedYear} />
-                <CostItem
-                    date={props.costs[0].date}
-                    description={props.costs[0].description}
-                    amount={props.costs[0].amount}
-                />
-                <CostItem
-                    date={props.costs[0].date}
-                    description={props.costs[0].description}
-                    amount={props.costs[0].amount}
-                />
-                <CostItem
-                    date={props.costs[0].date}
-                    description={props.costs[0].description}
-                    amount={props.costs[0].amount}
-                />
+                {props.costs.map(cost => (
+                    <CostItem
+                        date={cost.date}
+                        description={cost.description}
+                        amount={cost.amount}
+                    />
+                ))}
             </Card>
         </div>
     );
