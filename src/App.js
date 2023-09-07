@@ -6,7 +6,7 @@ import {useState} from "react";
 const INITIAL_COSTS = [
     {
         id: 'c1',
-        date: new Date(2021, 2, 12),
+        date: new Date(2020, 2, 12),
         description: 'Холодильник',
         amount: 999.99,
     },
@@ -18,7 +18,7 @@ const INITIAL_COSTS = [
     },
     {
         id: 'c3',
-        date: new Date(2022, 12, 10),
+        date: new Date(2019, 10, 10),
         description: 'Джинсы',
         amount: 45,
     }
