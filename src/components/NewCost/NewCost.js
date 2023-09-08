@@ -1,7 +1,10 @@
 import CostForm from "./CostForm";
 import './NewCost.css';
+import {useState} from "react";
 
 const NewCost = (props) => {
+    const [visibleForm, setVisibleForm] = useState(false);
+
     const saveCostDataHandler = (inputCostData) => {
         const costData = {
             ...inputCostData,
@@ -11,8 +14,18 @@ const NewCost = (props) => {
         props.onAddCost(costData);
     }
 
+    const openFormHandler = () => {
+        setVisibleForm(true);
+    }
+
+    const closeFormHandler = () => {
+        setVisibleForm(false);
+    }
+
+
     return <div className='new-cost'>
-        <CostForm onSaveCostData={saveCostDataHandler} />
+        {visibleForm === false && <button type='button' onClick={openFormHandler}>Добавить новый расход</button>}
+        {visibleForm === true && <CostForm onSaveCostData={saveCostDataHandler} onCloseFormHandler={closeFormHandler} />}
     </div>;
 }
 

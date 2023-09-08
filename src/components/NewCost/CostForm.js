@@ -56,6 +56,11 @@ const CostForm = (props) => {
         setInputAmount('');
         setInputDate('');
     }
+
+    const closeFormHandler = () => {
+        props.onCloseFormHandler();
+    }
+
     
 
     return <form onSubmit={submitHandler}>
@@ -91,6 +96,7 @@ const CostForm = (props) => {
                 <button
                     type='submit'
                 >Добавить расход</button>
+                <button type='button' onClick={closeFormHandler}>Отмена</button>
             </div>
         </div>
     </form>;
